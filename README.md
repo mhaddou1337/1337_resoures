@@ -47,23 +47,16 @@ For testing purposes, you can use these example accounts:
 
 ```json
 [
-  { "login": "bkali", "password": "bkali", "role": "student" },
-  { "login": "zmahmoud", "password": "zmahmoud", "role": "student" },
-  { "login": "aelghazi", "password": "aelghazi", "role": "student" },
-  { "login": "mhaddaou", "password": "mhaddaou", "role": "student" },
-  { "login": "oait-bad", "password": "oait-bad", "role": "student" },
-  { "login": "yjaadoun", "password": "yjaadoun", "role": "staff" },
-  { "login": "mel-hada", "password": "mel-hada", "role": "student" },
-  { "login": "rel-maza", "password": "rel-maza", "role": "student" },
-  { "login": "sel-kham", "password": "sel-kham", "role": "staff" },
-  { "login": "ael-hiou", "password": "ael-hiou", "role": "student" },
-  { "login": "youness", "password": "Youness6180", "role": "student" },
-  { "login": "atalbaou", "password": "Ahmed9256", "role": "student" },
-  { "login": "snait-ai", "password": "Salah-Eddine0948", "role": "student" },
-  { "login": "yanait-e", "password": "Yasyn8508", "role": "student" },
-  { "login": "abel-bah", "password": "Abderrazzak1418", "role": "student" },
-  { "login": "moraouf", "password": "Mohamed Taha5637", "role": "student" },
-  { "login": "helmfadd", "password": "Hamza1886", "role": "student" }
+  [
+  { "login": "youness", "password": "Youness6180" },
+  { "login": "atalbaou", "password": "Ahmed9256" },
+  { "login": "snait-ai", "password": "Salah-Eddine0948" },
+  { "login": "yanait-e", "password": "Yasyn8508" },
+  { "login": "abel-bah", "password": "Abderrazzak1418" },
+  { "login": "moraouf", "password": "Mohamed Taha5637" },
+  { "login": "helmfadd", "password": "Hamza1886" }
+]
+
 ]
 ```
 
