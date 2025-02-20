@@ -65,8 +65,8 @@ const categoryLabels: Record<string, string> = {
                   id="title"
                   required
                   minlength="3"
-                  maxlength="100"
-                  class="w-full rounded-md border p-3 bg-background text-foreground"
+                  maxlength="64"
+                  class="w-full rounded-md border p-3 bg-background text-foreground break-words"
                   placeholder="Enter a descriptive title"
                 />
               </div>
@@ -328,14 +328,16 @@ const categoryLabels: Record<string, string> = {
       <div class="flex gap-4">
         <div class="vote-container"></div>
         <div class="flex-1">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-semibold">${resource.title}</h3>
-            <div class="flex items-center gap-2">
+          <div class="flex justify-between items-start mb-2 gap-4">
+            <h3 class="font-semibold flex-1 break-words max-w-[64ch]">${resource.title}</h3>
+            <div class="flex items-center gap-2 flex-shrink-0">
               <span class="text-sm px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">${resource.category}</span>
               ${actionButtons}
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-3">${resource.description}</p>
+          <div class="w-full overflow-hidden">
+            <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm leading-relaxed break-words whitespace-pre-line line-clamp-3">${resource.description}</p>
+          </div>
           <a href="${resource.link}" target="_blank" rel="noopener noreferrer"
              class="text-blue-600 dark:text-blue-400 hover:underline">
             Access Resource

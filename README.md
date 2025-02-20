@@ -1,42 +1,59 @@
-# Astro Shadcn UI Template
+# 1337 Resources Platform
 
-This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI.
-
-## Getting Started
-
-To get started with this application, make sure you have Node.js v18+ installed on your system. Then, follow these steps:
-
-```bash
-git clone --depth=1 https://github.com/AREA44/astro-shadcn-ui-template
-cd astro-shadcn-ui-template
-pnpm install
-pnpm dev
-```
-
-Now, you can open your browser and navigate to http://localhost:4321 to see the application running.
+A collaborative platform built for 1337 students to share and access educational resources. Built with Astro.js and Shadcn UI, this platform enables students to contribute, discover, and engage with learning materials.
 
 ## Features
 
-- [Astro](https://astro.build): A modern static site builder that allows you to write components using familiar web standards like HTML, CSS, and JavaScript.
-- [Tailwind CSS](https://tailwindcss.com): A utility-first CSS framework that provides a set of pre-designed styling classes to rapidly build user interfaces.
-- [shadcn/ui](https://ui.shadcn.com): A collection of reusable UI components for building responsive and accessible interfaces.
-- The template includes support for a theme toggle, allowing users to switch between light and dark themes.
+- **Resource Sharing**: Students can share educational resources with titles, descriptions, links, and categories
+- **Category System**: Resources organized into categories like Mathematics, Science, Programming, Languages, and Humanities
+- **Voting System**: Upvote/downvote system to highlight quality resources
+- **Comments**: Interactive comment sections for discussions on resources
+- **User Roles**: Distinct features for students and staff members
+- **Search & Filter**: Easy resource discovery through search and category filtering
+- **Top Contributors**: Recognition for active community members
+- **Responsive Design**: Works seamlessly on all devices
 
-## How to add components
+## Technical Stack
 
-Shadcn UI is a collection of re-usable components that can be easily integrated into your applications. It is not a component library, but rather a set of components that you can copy and paste into your projects.
+- [Astro](https://astro.build): Modern web framework for building fast, content-focused websites
+- [React](https://reactjs.org): Used for interactive components
+- [Tailwind CSS](https://tailwindcss.com): Utility-first CSS framework for styling
+- [shadcn/ui](https://ui.shadcn.com): Beautiful and accessible UI components
+- TypeScript: Type-safe development
 
-To add a new component to your application, please refer to the [configuration guide](https://ui.shadcn.com/docs/installation/astro#thats-it).
+## Getting Started
 
-> [!NOTE]
-> In Astro, an [island](https://docs.astro.build/en/concepts/islands/) refers to any interactive UI component on the page. To add an interactive component like [Accordion](https://ui.shadcn.com/docs/components/accordion), [Dialog](https://ui.shadcn.com/docs/components/dialog) and more you have a couple of solutions available: [Add a Shadcn UI Component - Space Madness](https://spacemadness.dev/docs/add-a-shadcn-ui-component) or [shadcn-ui/ui#2890](https://github.com/AREA44/astro-shadcn-ui-template/issues/66).
+To run this application locally:
 
-For detailed documentation on using Shadcn UI, please visit the [full documentation](https://ui.shadcn.com/docs).
+```bash
+# Clone the repository
+git clone [repository-url]
+cd 1337_resoures
 
-Shadcn UI is primarily built for the React framework. If you are unfamiliar with framework components in Astro, we recommend reading the [framework components guide](https://docs.astro.build/en/core-concepts/framework-components/) to get started.
+# Install dependencies
+npm install
 
-Feel free to explore the various components and enhance your application with Shadcn UI!
+# Start development server
+npm run dev
+```
+
+Visit `http://localhost:4321` in your browser.
+
+## Contributing Guidelines
+
+1. Resources should be educational and benefit the community
+2. Properly attribute sources and respect copyright
+3. Ensure content is relevant to the selected category
+4. Keep discussions constructive and respectful
+
+## Authentication
+
+The platform requires authentication to access resources. Users must sign in with their 1337 credentials to:
+- Share resources
+- Vote on content
+- Participate in discussions
+- Access role-specific features
 
 ## License
 
-Licensed under the [MIT License](LICENSE).
+Licensed under the MIT License. See [LICENSE](LICENSE) for more information.
