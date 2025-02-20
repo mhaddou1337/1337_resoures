@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { StudentCard } from "../components/StudentCard";
+
+const students = [
+  {
+    id: "STU001",
+    name: "Jane Cooper",
+    email: "jane.cooper@university.edu",
+    program: "Computer Science",
+    year: 3,
+    status: "Active",
+    gpa: 3.8,
+    avatar: "https://i.pravatar.cc/150?u=jane"
+  },
+  {
+    id: "STU002",
+    name: "Alex Mitchell",
+    email: "alex.mitchell@university.edu",
+    program: "Data Science",
+    year: 2,
+    status: "Active",
+    gpa: 3.9
+  },
+  {
+    id: "STU003",
+    name: "Maria Garcia",
+    email: "maria.garcia@university.edu",
+    program: "Software Engineering",
+    year: 4,
+    status: "On Leave",
+    gpa: 3.5,
+    avatar: "https://i.pravatar.cc/150?u=maria"
+  }
+] as const;
+---
+
+<BaseLayout title="Student Cards Demo">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Student Information Cards</h1>
+    
+    <div class="max-w-2xl">
+      <p class="text-muted-foreground mb-6">
+        Hover over the student cards below to see detailed information. This demonstrates
+        the HoverCard component with different student statuses and information.
+      </p>
+      
+      <div class="flex flex-col gap-4">
+        {students.map(student => (
+          <StudentCard client:load student={student} />
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

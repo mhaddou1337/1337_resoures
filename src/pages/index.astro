@@ -1,0 +1,47 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<BaseLayout
+  title="1337R"
+>
+  <section class="container grid items-center gap-6 pt-6 pb-8 md:py-10">
+    <div class="flex max-w-[980px] flex-col items-start gap-2">
+      <h1
+        class="text-3xl leading-tight font-extrabold tracking-tighter md:text-4xl"
+      >
+        Empowering Students to Share, Learn, and Succeed Together. 
+      </h1>
+      <p class="text-muted-foreground max-w-[700px] text-lg">
+       1337 Resources helps 1337 students share and access study materials. Learn, collaborate, and excel together.
+      </p>
+    </div>
+    <div class="flex gap-4">
+      <a
+        href="https://1337.ma"
+        target="_blank"
+        rel="noreferrer"
+        class={buttonVariants()}
+      >
+        Discover 1337
+      </a>
+      <a
+        href="/sign-in"
+        rel="noreferrer"
+        class={buttonVariants({ variant: 'outline' })}
+      >
+        Sign In
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { isAuthenticated } from "../utils/auth";
+  
+  // Check authentication status on page load
+  if (isAuthenticated()) {
+    window.location.href = '/resources';
+  }
+</script>

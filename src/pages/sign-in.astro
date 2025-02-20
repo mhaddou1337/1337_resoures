@@ -1,0 +1,98 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+---
+
+<BaseLayout title="Sign In">
+  <main class="container max-w-md mx-auto mt-16 px-4">
+    <div class="space-y-6">
+      <div class="space-y-2 text-center">
+        <h1 class="text-3xl font-bold">Welcome back</h1>
+        <p class="text-gray-500 dark:text-gray-400">Sign in to your account</p>
+      </div>
+
+      <div id="alert-container" class="hidden">
+        <Alert id="auth-alert" variant="destructive" client:load>
+          <AlertDescription id="alert-message" client:load />
+        </Alert>
+      </div>
+
+      <form id="signin-form" class="space-y-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="username"
+          >
+            Username or Email
+          </label>
+          <input
+            type="text"
+            id="username"
+            required
+            class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            required
+            class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+          />
+        </div>
+        <Button
+          type="submit"
+          variant="auth-active-light"
+          className="w-full"
+          client:load
+        >
+          Sign In
+        </Button>
+      </form>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  import { authenticateUser } from "../utils/auth";
+
+  const form = document.getElementById("signin-form") as HTMLFormElement;
+  const alertContainer = document.getElementById("alert-container")!;
+  const alertElement = document.getElementById("auth-alert")!;
+  const alertMessage = document.getElementById("alert-message")!;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const username = (document.getElementById("username") as HTMLInputElement)
+      .value;
+    const password = (document.getElementById("password") as HTMLInputElement)
+      .value;
+
+    if (!username || !password) {
+      showError("Please fill in all fields");
+      return;
+    }
+
+    const result = await authenticateUser(username, password);
+
+    if (result.success) {
+      // Redirect to resources page on successful login
+      window.location.href = "/resources";
+    } else {
+      showError(result.error || "Authentication failed");
+    }
+  });
+
+  function showError(message: string) {
+    alertContainer.classList.remove("hidden");
+    alertMessage.textContent = message;
+  }
+</script>
